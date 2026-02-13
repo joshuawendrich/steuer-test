@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# Anwendung starten
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um die Anwendung zu starten, folgen Sie diesen Schritten:
 
-Currently, two official plugins are available:
+1.  **Abhängigkeiten installieren:**
+    Öffnen Sie Ihr Terminal im Projektverzeichnis und führen Sie den folgenden Befehl aus, um alle erforderlichen Abhängigkeiten zu installieren:
+    ```bash
+    npm install
+    ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2.  **Entwicklungsserver starten:**
+    Nachdem die Abhängigkeiten installiert wurden, können Sie den Entwicklungsserver mit dem folgenden Befehl starten:
+    ```bash
+    npm run dev
+    ```
+    Die Anwendung wird normalerweise unter `http://localhost:5173` (oder einem anderen Port, der im Terminal angezeigt wird) verfügbar sein.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Anwendung für die Produktion bauen:**
+    Um eine Produktionsversion der Anwendung zu erstellen, verwenden Sie den folgenden Befehl:
+    ```bash
+    npm run build
+    ```
+    Die gebauten Dateien finden Sie im `dist`-Verzeichnis.

@@ -46,6 +46,7 @@ const Summary: React.FC<SummaryProps> = ({ userData1, userData2 }) => {
             <th>Wert Benutzer 1</th>
             <th>Wert Benutzer 2</th>
             <th>Unterschied</th>
+            <th>Verbesserungsvorschlag</th>
           </tr>
         </thead>
         <tbody>
@@ -57,6 +58,15 @@ const Summary: React.FC<SummaryProps> = ({ userData1, userData2 }) => {
                 {result.user2Value}
               </td>
               <td>{result.isDifferent ? 'Ja' : 'Nein'}</td>
+              <td>
+                {result.isDifferent && (
+                  <textarea
+                    placeholder="Vorschlag eingeben"
+                    rows={1}
+                    style={{ width: '100%' }}
+                  />
+                )}
+              </td>
             </tr>
           ))}
         </tbody>
