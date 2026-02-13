@@ -39,6 +39,7 @@ const Summary: React.FC<SummaryProps> = ({ userData1, userData2 }) => {
   return (
     <div className="summary-container">
       <h2>Vergleich der Steuererklärungsdaten</h2>
+
       <table>
         <thead>
           <tr>
@@ -61,7 +62,7 @@ const Summary: React.FC<SummaryProps> = ({ userData1, userData2 }) => {
               <td>
                 {result.isDifferent && (
                   <textarea
-                    placeholder="Vorschlag eingeben"
+                    placeholder="Feedback eingeben"
                     rows={1}
                     style={{ width: '100%' }}
                   />

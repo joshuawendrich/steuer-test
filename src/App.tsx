@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>User Data Comparison</h1>
+
 
       {!showSummary && currentUser === 1 && (
         <UserForm userNumber={1} onSubmit={handleSubmit} />
@@ -43,7 +43,7 @@ function App() {
       {showSummary && userData1 && userData2 && (
         <>
           <Summary userData1={{ userNumber: 1, data: userData1 }} userData2={{ userNumber: 2, data: userData2 }} />
-          <button onClick={handleReset}>Start Over</button>
+          <button onClick={handleReset}>Neustart</button>
         </>
       )}
     </div>
