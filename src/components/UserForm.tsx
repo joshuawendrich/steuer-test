@@ -15,7 +15,7 @@ const UserForm: React.FC<UserFormProps> = ({ userNumber, onSubmit }) => {
     krankenkassenbeitrag: 0, // Krankenversicherungsbeitrag (Health Insurance Contribution)
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -46,15 +46,22 @@ const UserForm: React.FC<UserFormProps> = ({ userNumber, onSubmit }) => {
           />
         </div>
         <div>
-          <label htmlFor={`steuerklasse-${userNumber}`}>Steuerklasse (z.B. I, III, IV):</label>
-          <input
-            type="text"
+          <label htmlFor={`steuerklasse-${userNumber}`}>Steuerklasse:</label>
+          <select
             id={`steuerklasse-${userNumber}`}
             name="steuerklasse"
             value={formData.steuerklasse}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="">Bitte wählen</option>
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+            <option value="V">V</option>
+            <option value="VI">VI</option>
+          </select>
         </div>
         <div>
           <label htmlFor={`kinderfreibetraege-${userNumber}`}>Kinderfreibeträge:</label>
